@@ -74,7 +74,7 @@
   <!-- End Meta Pixel Code -->
 
   <style>
-    /* RESET & CONFIGURAÇÕES GLOBAIS */
+    /* RESET E CONFIGURAÇÕES GLOBAIS */
     * {
       margin: 0;
       padding: 0;
@@ -87,320 +87,335 @@
       overflow-x: hidden;
     }
     
-    /* Contêiner de escala para ajustar o tamanho final */
-    #page-wrapper {
-      transform: scale(0.5);          /* Reduz para 50% do tamanho original */
-      transform-origin: top left;      /* Ponto de origem: canto superior esquerdo */
-      width: 200%;                     /* Compensa a redução para manter o layout */
-    }
-    
-    /* Vídeo de fundo */
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -10;
-    }
-    
-    /* --- Estilos Desktop --- */
-    .CABEÇALHO {
-      background-image: url("images/MODELO_0000_CABEÇALHO.png");
-      background-size: 100% 100%;
+    /* ================= DESKTOP CSS ================= */
+    .BACGROUND {
+      background-image: url("images/BACGROUND.png");
       position: absolute;
-      left: 528px;
-      top: 118px;
-      width: 2784px;
-      height: 52px;
-      z-index: 14;
+      left: 0px;
+      top: 0px;
+      width: 1920px;
+      height: 2160px;
+      z-index: 1;
     }
-    .BOTÃO_YOUTUBE {
-      background-image: url("images/MODELO_0001_BOTÃO-YOUTUBE.png");
-      background-size: 100% 100%;
+    .FOTO {
+      background-image: url("images/VIDEO-DE-FUNDO FOTO 1.jpg");
       position: absolute;
-      left: 2074px;
-      top: 2016px;
-      width: 53px;
-      height: 38px;
-      z-index: 8;
+      left: -1535px;
+      top: -694px;
+      width: 5183px;
+      height: 2915px;
+      z-index: 2;
     }
-    .BOTÃO_TIKTOK {
-      background-image: url("images/MODELO_0002_BOTÃO-TIKTOK.png");
-      background-size: 100% 100%;
+    .VIDEO {
+      /* Note: para vídeos o ideal é usar a tag <video>; aqui usamos a regra do CSS conforme enviado */
+      background-image: url("videos/MODELO_0008_VIDEO.mp4");
       position: absolute;
-      left: 1896px;
-      top: 2008px;
-      width: 48px;
-      height: 55px;
-      z-index: 7;
+      left: -1535px;
+      top: -694px;
+      width: 5183px;
+      height: 2915px;
+      z-index: 2;
     }
-    .BOTÃO_INSTAGRAM {
-      background-image: url("images/MODELO_0003_BOTÃO-INSTAGRAM.png");
-      background-size: 100% 100%;
+    .CAPA_DA_MÚSICA {
+      background-image: url("images/CAPA-DA-MÚSICA.png");
       position: absolute;
-      left: 1713px;
-      top: 2007px;
-      width: 55px;
-      height: 56px;
-      z-index: 6;
+      left: 687px;
+      top: 245px;
+      width: 547px;
+      height: 457px;
+      z-index: 3;
+      transition: transform 0.5s ease;
     }
-    .BOTÃO_PARA_OUVIR_A_MÚSICA {
-      background-image: url("images/MODELO_0004_BOTÃO-PARA-OUVIR-A-MÚSICA.png");
-      background-size: 100% 100%;
+    .LINK_INCORPORADO {
+      background-image: url("images/LINK-INCORPORADO.png");
       position: absolute;
-      left: 1312px;
-      top: 1700px;
-      width: 1215px;
-      height: 69px;
-      z-index: 5;
-    }
-    .VINHETA {
-      background-image: url("images/MODELO_0005_VINHETA.png");
-      background-size: 100% 100%;
-      position: fixed;
-      left: -348px;
-      top: -590px;
-      width: 4584px;
-      height: 2750px;
+      left: 363px;
+      top: 1162px;
+      width: 1201px;
+      height: 556px;
       z-index: 4;
     }
     .BOTÃO_SPOTIFY {
-      background-image: url("images/MODELO_0006_BOTÃO-SPOTIFY.png");
-      background-size: 100% 100%;
+      background-image: url("images/BOTÃO-SPOTIFY.png");
       position: absolute;
-      left: 1868px;
-      top: 1509px;
-      width: 104px;
-      height: 104px;
-      z-index: 3;
+      left: 934px;
+      top: 737px;
+      width: 52px;
+      height: 53px;
+      z-index: 5;
     }
-    .CAPA_DA_MÚSICA {
-      background-image: url("images/MODELO_0007_CAPA-DA-MÚSICA.png");
-      background-size: 100% 100%;
+    .VINHETA {
+      background-image: url("images/VINHETA.png");
       position: absolute;
-      left: 1380px;
-      top: 530px;
-      width: 1094px;
-      height: 914px;
-      z-index: 2;
-      transition: transform 0.5s ease;
+      left: -174px;
+      top: -295px;
+      width: 2292px;
+      height: 1375px;
+      z-index: 6;
     }
-    /* Alteração: Centralizar o container do embed */
-    .LINK_INCORPORADO {
+    .BOTÃO_PARA_OUVIR_A_MÚSICA {
+      background-image: url("images/BOTÃO-PARA-OUVIR-A-MÚSICA.png");
       position: absolute;
-      left: 50%;
-      top: 785px;
-      width: 2401px;
-      height: 1111px;
-      z-index: 3;
-      transform: translateX(-50%);
+      left: 656px;
+      top: 872px;
+      width: 608px;
+      height: 35px;
+      z-index: 7;
     }
-    /* Animação de escala para hover */
+    .BOTÃO_INSTAGRAM {
+      background-image: url("images/BOTÃO-INSTAGRAM.png");
+      position: absolute;
+      left: 829px;
+      top: 2032px;
+      width: 37px;
+      height: 42px;
+      z-index: 13;
+    }
+    .BOTÃO_TIKTOK_ {
+      background-image: url("images/BOTÃO TIKTOK .png");
+      position: absolute;
+      left: 947px;
+      top: 2038px;
+      width: 30px;
+      height: 35px;
+      z-index: 14;
+    }
+    .BOTÃO_YOUTUBE {
+      background-image: url("images/BOTÃO YOUTUBE.png");
+      position: absolute;
+      left: 1057px;
+      top: 2043px;
+      width: 34px;
+      height: 24px;
+      z-index: 15;
+    }
+    .CABEÇALHO {
+      background-image: url("images/CABEÇALHO.png");
+      position: absolute;
+      left: 264px;
+      top: 68px;
+      width: 1392px;
+      height: 26px;
+      z-index: 16;
+    }
+    
+    /* ================= MOBILE CSS ================= */
+    /* Aqui ajustamos os z-index para obedecer:
+       VINHETA fixa e acima de CAPA_DA_MÚSICA e BOTÃO_SPOTIFY,
+       e BOTÃO-PARA-OUVIR-A-MÚSICA e CABEÇALHO acima da VINHETA.
+    */
+    @media screen and (max-width: 1024px) {
+      .FOTO {
+        background-image: url("images/VIDEO-DE-FUNDO FOTO 1.png");
+        position: absolute;
+        left: -1417px;
+        top: -2276px;
+        width: 4098px;
+        height: 7282px;
+        z-index: 1;
+      }
+      .VIDEO {
+        background-image: url("videos/MODELO-MOBILE_0008_VIDEO-DE-FUNDO.mp4");
+        position: absolute;
+        left: -1417px;
+        top: -2276px;
+        width: 4098px;
+        height: 7282px;
+        z-index: 1;
+      }
+      .LINK_INCORPORADO {
+        background-image: url("images/LINK INCORPORADO.png");
+        position: absolute;
+        left: 134px;
+        top: 2054px;
+        width: 812px;
+        height: 688px;
+        z-index: 2;
+      }
+      /* Ajustando a ordem conforme solicitado:
+         CAPA_DA_MÚSICA: z-index 3,
+         BOTÃO_SPOTIFY: z-index 4,
+         VINHETA: z-index 5,
+         BOTÃO_PARA_OUVIR_A_MÚSICA: z-index 6,
+         Social icons e CABEÇALHO por cima */
+      .CAPA_DA_MÚSICA {
+        background-image: url("images/CAPA DA MÚSICA.png");
+        position: absolute;
+        left: 267px;
+        top: 503px;
+        width: 547px;
+        height: 457px;
+        z-index: 3;
+        transition: transform 0.5s ease;
+      }
+      .BOTÃO_SPOTIFY {
+        background-image: url("images/BOTÃO SPOTIFY.png");
+        position: absolute;
+        left: 447px;
+        top: 1075px;
+        width: 185px;
+        height: 182px;
+        z-index: 4;
+      }
+      .VINHETA {
+        background-image: url("images/VINHETA.png");
+        position: absolute;
+        left: -618px;
+        top: 0px;
+        width: 2292px;
+        height: 1920px;
+        z-index: 5;
+      }
+      .BOTÃO_PARA_OUVIR_A_MÚSICA {
+        background-image: url("images/BOTÃO PARA OUVIR A MÚSICA.png");
+        position: absolute;
+        left: 228px;
+        top: 1388px;
+        width: 628px;
+        height: 35px;
+        z-index: 6;
+      }
+      .BOTÃO_INSTAGRAM {
+        background-image: url("images/BOTÃO INSTAGRAM.png");
+        position: absolute;
+        left: 129px;
+        top: 3155px;
+        width: 186px;
+        height: 186px;
+        z-index: 7;
+      }
+      .BOTÃO_TIKTOK {
+        background-image: url("images/BOTÃO TIKTOK.png");
+        position: absolute;
+        left: 495px;
+        top: 3202px;
+        width: 83px;
+        height: 95px;
+        z-index: 8;
+      }
+      .BOTÃO_YOUTUBE_ {
+        background-image: url("images/BOTÃO YOUTUBE .png");
+        position: absolute;
+        left: 803px;
+        top: 3216px;
+        width: 93px;
+        height: 65px;
+        z-index: 9;
+      }
+      .CABEÇALHO {
+        background-image: url("images/CABEÇALHO.png");
+        position: absolute;
+        left: 67px;
+        top: 254px;
+        width: 947px;
+        height: 37px;
+        z-index: 10;
+      }
+      
+      /* Exibe o layout Mobile e oculta o Desktop */
+      #mobile-layout { display: block; }
+      #desktop-layout { display: none; }
+    }
+    /* Oculta o layout Mobile em telas maiores */
+    #mobile-layout { display: none; }
+    
+    /* ================= Animações de Hover ================= */
     .scale-on-hover:hover {
       transform: scale(1.1);
       transition: transform 0.5s;
     }
-    
-    /* Container do layout Desktop */
-    #desktop-layout { display: block; }
-    
-    /* --- Estilos Mobile --- */
-    @media screen and (max-width: 1024px) {
-      .CABEÇALHO {
-        background-image: url("images/MODELO-MOBILE_0006_CABEÇALHO.png");
-        background-size: 100% 100%;
-        position: absolute;
-        left: 149px;
-        top: 601px;
-        width: 1869px;
-        height: 209px;
-        z-index: 3;
-      }
-      .BOTÃO_YOUTUBE {
-        background-image: url("images/MODELO-MOBILE_0001_BOTÃO-YOUTUBE.png");
-        background-size: 100% 100%;
-        position: absolute;
-        left: 1210px;
-        top: 3627px;
-        width: 53px;
-        height: 38px;
-        z-index: 8;
-      }
-      .BOTÃO_TIKTOK {
-        background-image: url("images/MODELO-MOBILE_0002_BOTÃO-TIKTOK.png");
-        background-size: 100% 100%;
-        position: absolute;
-        left: 1032px;
-        top: 3619px;
-        width: 48px;
-        height: 55px;
-        z-index: 7;
-      }
-      .BOTÃO_INSTAGRAM {
-        background-image: url("images/MODELO-MOBILE_0003_BOTÃO-INSTAGRAM.png");
-        background-size: 100% 100%;
-        position: absolute;
-        left: 849px;
-        top: 3618px;
-        width: 55px;
-        height: 56px;
-        z-index: 6;
-      }
-      .BOTÃO_SPOTIFY {
-        background-image: url("images/MODELO-MOBILE_0004_BOTÃO-SPOTIFY.png");
-        background-size: 100% 100%;
-        position: absolute;
-        left: 1028px;
-        top: 2693px;
-        width: 104px;
-        height: 104px;
-        z-index: 5;
-      }
-      .CAPA_DA_MÚSICA {
-        background-image: url("images/MODELO-MOBILE_0005_CAPA-DA-MÚSICA.png");
-        background-size: 100% 100%;
-        position: absolute;
-        left: 540px;
-        top: 1370px;
-        width: 1094px;
-        height: 914px;
-        z-index: 4;
-        transition: transform 0.5s ease;
-      }
-      .BOTÃO_PARA_OUVIR_A_MÚSICA {
-        background-image: url("images/MODELO-MOBILE_0000_BOTÃO-PARA-OUVIR-A-MÚSICA.png");
-        background-size: 100% 100%;
-        position: absolute;
-        left: 453px;
-        top: 2949px;
-        width: 1254px;
-        height: 69px;
-        z-index: 15;
-      }
-      .VINHETA {
-        background-image: url("images/MODELO-MOBILE_0007_VINHETA.png");
-        background-size: 100% 100%;
-        position: fixed;
-        left: -1188px;
-        top: 0px;
-        width: 4584px;
-        height: 3840px;
-        z-index: 2;
-      }
-      .LINK_INCORPORADO {
-        position: absolute;
-        left: 50%;
-        top: 2189px;
-        width: 1624px;
-        height: 1375px;
-        z-index: 20;
-        transform: translateX(-50%);
-      }
-      
-      /* Exibe o layout Mobile e esconde o Desktop */
-      #mobile-layout { display: block; }
-      #desktop-layout { display: none; }
-    }
-    /* Esconde o layout Mobile para telas maiores */
-    #mobile-layout { display: none; }
   </style>
 </head>
 <body>
-  <!-- Todos os conteúdos são encapsulados no wrapper para escalonamento -->
-  <div id="page-wrapper">
-    <!-- Vídeo de fundo para Desktop -->
-    <video class="video-bg desktop-video" autoplay loop muted playsinline 
-           poster="images/MODELO_0008_VIDEO-DE-FUNDO FOTO 1.png">
-      <source src="videos/MODELO_0008_VIDEO.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
-    </video>
-    <!-- Vídeo de fundo para Mobile -->
-    <video class="video-bg mobile-video" autoplay loop muted playsinline 
-           poster="images/MODELO-MOBILE_0008_VIDEO-DE-FUNDO FOTO 1.png">
-      <source src="videos/MODELO-MOBILE_0008_VIDEO-DE-FUNDO.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
-    </video>
+  <!-- Layout Desktop -->
+  <div id="desktop-layout">
+    <!-- Fundo -->
+    <div class="BACGROUND"></div>
+    <!-- Camada FOTO (imagem de fundo, ex: "VIDEO-DE-FUNDO FOTO 1") -->
+    <div class="FOTO"></div>
+    <!-- Camada VIDEO (caso queira substituir FOTO pelo vídeo "MODELO_0008_VIDEO") -->
+    <div class="VIDEO"></div>
     
-    <!-- Layout para Desktop -->
-    <div id="desktop-layout">
-      <!-- Vinheta (fixada) -->
-      <div class="VINHETA"></div>
-      <!-- Cabeçalho (redireciona para o Spotify) -->
-      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-        <div class="CABEÇALHO"></div>
-      </a>
-      <!-- Capa da Música -->
-      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-        <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
-      </a>
-      <!-- Botão do Spotify -->
-      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-        <div class="BOTÃO_SPOTIFY scale-on-hover"></div>
-      </a>
-      <!-- Botão para Ouvir a Música -->
-      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-        <div class="BOTÃO_PARA_OUVIR_A_MÚSICA scale-on-hover"></div>
-      </a>
-      <!-- Ícones de redes sociais -->
-      <a href="https://www.youtube.com/@sojosh_" target="_blank">
-        <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
-      </a>
-      <a href="https://www.tiktok.com/@sojosh_" target="_blank">
-        <div class="BOTÃO_TIKTOK scale-on-hover"></div>
-      </a>
-      <a href="https://www.instagram.com/sojosh_" target="_blank">
-        <div class="BOTÃO_INSTAGRAM scale-on-hover"></div>
-      </a>
-      <!-- Embed do Spotify -->
-      <div class="LINK_INCORPORADO">
-        <iframe style="border-radius:12px" 
-                src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator&theme=0" 
-                width="100%" height="100%" frameborder="0" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy">
-        </iframe>
-      </div>
-    </div>
-    
-    <!-- Layout para Mobile -->
-    <div id="mobile-layout">
-      <div class="VINHETA"></div>
-      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-        <div class="CABEÇALHO"></div>
-      </a>
-      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-        <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
-      </a>
-      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-        <div class="BOTÃO_SPOTIFY scale-on-hover"></div>
-      </a>
-      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-        <div class="BOTÃO_PARA_OUVIR_A_MÚSICA scale-on-hover"></div>
-      </a>
-      <a href="https://www.youtube.com/@sojosh_" target="_blank">
-        <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
-      </a>
-      <a href="https://www.tiktok.com/@sojosh_" target="_blank">
-        <div class="BOTÃO_TIKTOK scale-on-hover"></div>
-      </a>
-      <a href="https://www.instagram.com/sojosh_" target="_blank">
-        <div class="BOTÃO_INSTAGRAM scale-on-hover"></div>
-      </a>
-      <div class="LINK_INCORPORADO">
-        <iframe style="border-radius:12px" 
-                src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator&theme=0" 
-                width="100%" height="100%" frameborder="0" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy">
-        </iframe>
-      </div>
-    </div>
+    <!-- Elementos interativos: -->
+    <!-- CAPA DA MÚSICA com animação de hover -->
+    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+      <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
+    </a>
+    <!-- LINK INCORPORADO (embed do Spotify) -->
+    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+      <div class="LINK_INCORPORADO"></div>
+    </a>
+    <!-- BOTÃO SPOTIFY -->
+    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+      <div class="BOTÃO_SPOTIFY scale-on-hover"></div>
+    </a>
+    <!-- BOTÃO PARA OUVIR A MÚSICA -->
+    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+      <div class="BOTÃO_PARA_OUVIR_A_MÚSICA scale-on-hover"></div>
+    </a>
+    <!-- BOTÃO INSTAGRAM -->
+    <a href="https://www.instagram.com/sojosh_" target="_blank">
+      <div class="BOTÃO_INSTAGRAM scale-on-hover"></div>
+    </a>
+    <!-- BOTÃO TIKTOK -->
+    <a href="https://www.tiktok.com/@sojosh_" target="_blank">
+      <div class="BOTÃO_TIKTOK_ scale-on-hover"></div>
+    </a>
+    <!-- BOTÃO YOUTUBE -->
+    <a href="https://www.youtube.com/@sojosh_" target="_blank">
+      <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
+    </a>
+    <!-- CABEÇALHO (acima de VINHETA) -->
+    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+      <div class="CABEÇALHO scale-on-hover"></div>
+    </a>
+    <!-- VINHETA fica fixa abaixo dos BOTÃO-PARA-OUVIR e CABEÇALHO? 
+         Conforme solicitado, VINHETA deve ficar fixada e acima de CAPA, BOTÃO-SPOTIFY, VIDEO/FOTO,
+         mas BOTÃO-PARA-OUVIR e CABEÇALHO ficam acima dela. 
+         Aqui VINHETA já está com z-index 6, inferior a BOTÃO-PARA-OUVIR (7) and CABEÇALHO (16). -->
+  </div>
+  
+  <!-- Layout Mobile -->
+  <div id="mobile-layout">
+    <!-- Fundo: FOTO e VIDEO para Mobile -->
+    <div class="FOTO"></div>
+    <div class="VIDEO"></div>
+    <!-- LINK INCORPORADO -->
+    <div class="LINK_INCORPORADO"></div>
+    <!-- CAPA DA MÚSICA -->
+    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+      <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
+    </a>
+    <!-- BOTÃO SPOTIFY -->
+    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+      <div class="BOTÃO_SPOTIFY scale-on-hover"></div>
+    </a>
+    <!-- BOTÃO PARA OUVIR A MÚSICA -->
+    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+      <div class="BOTÃO_PARA_OUVIR_A_MÚSICA scale-on-hover"></div>
+    </a>
+    <!-- BOTÃO INSTAGRAM -->
+    <a href="https://www.instagram.com/sojosh_" target="_blank">
+      <div class="BOTÃO_INSTAGRAM scale-on-hover"></div>
+    </a>
+    <!-- BOTÃO TIKTOK -->
+    <a href="https://www.tiktok.com/@sojosh_" target="_blank">
+      <div class="BOTÃO_TIKTOK scale-on-hover"></div>
+    </a>
+    <!-- BOTÃO YOUTUBE -->
+    <a href="https://www.youtube.com/@sojosh_" target="_blank">
+      <div class="BOTÃO_YOUTUBE_ scale-on-hover"></div>
+    </a>
+    <!-- CABEÇALHO -->
+    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+      <div class="CABEÇALHO scale-on-hover"></div>
+    </a>
+    <!-- VINHETA -->
+    <div class="VINHETA"></div>
   </div>
   
   <script>
-    // Alterna entre os layouts Desktop e Mobile conforme a largura da tela
+    // Alterna entre layouts Desktop e Mobile conforme a largura da tela (breakpoint: 1024px)
     function updateLayout() {
       if (window.innerWidth > 1024) {
         document.getElementById("desktop-layout").style.display = "block";
