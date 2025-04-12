@@ -74,7 +74,7 @@
   <!-- End Meta Pixel Code -->
 
   <style>
-    /* RESET & CONFIG GLOBAIS */
+    /* RESET & CONFIGURAÇÕES GLOBAIS */
     * {
       margin: 0;
       padding: 0;
@@ -85,6 +85,13 @@
       height: 100%;
       font-family: Arial, sans-serif;
       overflow-x: hidden;
+    }
+    
+    /* Contêiner de escala para ajustar o tamanho final */
+    #page-wrapper {
+      transform: scale(0.5);          /* Reduz para 50% do tamanho original */
+      transform-origin: top left;      /* Ponto de origem: canto superior esquerdo */
+      width: 200%;                     /* Compensa a redução para manter o layout */
     }
     
     /* Vídeo de fundo */
@@ -301,91 +308,94 @@
   </style>
 </head>
 <body>
-  <!-- Vídeo de fundo para Desktop -->
-  <video class="video-bg desktop-video" autoplay loop muted playsinline 
-         poster="images/MODELO_0008_VIDEO-DE-FUNDO FOTO 1.png">
-    <source src="videos/MODELO_0008_VIDEO.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>
-  <!-- Vídeo de fundo para Mobile -->
-  <video class="video-bg mobile-video" autoplay loop muted playsinline 
-         poster="images/MODELO-MOBILE_0008_VIDEO-DE-FUNDO FOTO 1.png">
-    <source src="videos/MODELO-MOBILE_0008_VIDEO-DE-FUNDO.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>
-  
-  <!-- Layout para Desktop -->
-  <div id="desktop-layout">
-    <!-- Vinheta (fixada) -->
-    <div class="VINHETA"></div>
-    <!-- Cabeçalho (redireciona para Spotify) -->
-    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-      <div class="CABEÇALHO"></div>
-    </a>
-    <!-- Capa da Música -->
-    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-      <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
-    </a>
-    <!-- Botão do Spotify -->
-    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-      <div class="BOTÃO_SPOTIFY scale-on-hover"></div>
-    </a>
-    <!-- Botão para Ouvir a Música -->
-    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-      <div class="BOTÃO_PARA_OUVIR_A_MÚSICA scale-on-hover"></div>
-    </a>
-    <!-- Ícones de redes sociais -->
-    <a href="https://www.youtube.com/@sojosh_" target="_blank">
-      <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
-    </a>
-    <a href="https://www.tiktok.com/@sojosh_" target="_blank">
-      <div class="BOTÃO_TIKTOK scale-on-hover"></div>
-    </a>
-    <a href="https://www.instagram.com/sojosh_" target="_blank">
-      <div class="BOTÃO_INSTAGRAM scale-on-hover"></div>
-    </a>
-    <!-- Embed do Spotify -->
-    <div class="LINK_INCORPORADO">
-      <iframe style="border-radius:12px" 
-              src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator&theme=0" 
-              width="100%" height="100%" frameborder="0" 
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-              loading="lazy">
-      </iframe>
+  <!-- Todos os conteúdos são encapsulados no wrapper para escalonamento -->
+  <div id="page-wrapper">
+    <!-- Vídeo de fundo para Desktop -->
+    <video class="video-bg desktop-video" autoplay loop muted playsinline 
+           poster="images/MODELO_0008_VIDEO-DE-FUNDO FOTO 1.png">
+      <source src="videos/MODELO_0008_VIDEO.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+    <!-- Vídeo de fundo para Mobile -->
+    <video class="video-bg mobile-video" autoplay loop muted playsinline 
+           poster="images/MODELO-MOBILE_0008_VIDEO-DE-FUNDO FOTO 1.png">
+      <source src="videos/MODELO-MOBILE_0008_VIDEO-DE-FUNDO.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+    
+    <!-- Layout para Desktop -->
+    <div id="desktop-layout">
+      <!-- Vinheta (fixada) -->
+      <div class="VINHETA"></div>
+      <!-- Cabeçalho (redireciona para o Spotify) -->
+      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+        <div class="CABEÇALHO"></div>
+      </a>
+      <!-- Capa da Música -->
+      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+        <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
+      </a>
+      <!-- Botão do Spotify -->
+      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+        <div class="BOTÃO_SPOTIFY scale-on-hover"></div>
+      </a>
+      <!-- Botão para Ouvir a Música -->
+      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+        <div class="BOTÃO_PARA_OUVIR_A_MÚSICA scale-on-hover"></div>
+      </a>
+      <!-- Ícones de redes sociais -->
+      <a href="https://www.youtube.com/@sojosh_" target="_blank">
+        <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
+      </a>
+      <a href="https://www.tiktok.com/@sojosh_" target="_blank">
+        <div class="BOTÃO_TIKTOK scale-on-hover"></div>
+      </a>
+      <a href="https://www.instagram.com/sojosh_" target="_blank">
+        <div class="BOTÃO_INSTAGRAM scale-on-hover"></div>
+      </a>
+      <!-- Embed do Spotify -->
+      <div class="LINK_INCORPORADO">
+        <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator&theme=0" 
+                width="100%" height="100%" frameborder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+        </iframe>
+      </div>
     </div>
-  </div>
-  
-  <!-- Layout para Mobile -->
-  <div id="mobile-layout">
-    <div class="VINHETA"></div>
-    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-      <div class="CABEÇALHO"></div>
-    </a>
-    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-      <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
-    </a>
-    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-      <div class="BOTÃO_SPOTIFY scale-on-hover"></div>
-    </a>
-    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-      <div class="BOTÃO_PARA_OUVIR_A_MÚSICA scale-on-hover"></div>
-    </a>
-    <a href="https://www.youtube.com/@sojosh_" target="_blank">
-      <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
-    </a>
-    <a href="https://www.tiktok.com/@sojosh_" target="_blank">
-      <div class="BOTÃO_TIKTOK scale-on-hover"></div>
-    </a>
-    <a href="https://www.instagram.com/sojosh_" target="_blank">
-      <div class="BOTÃO_INSTAGRAM scale-on-hover"></div>
-    </a>
-    <div class="LINK_INCORPORADO">
-      <iframe style="border-radius:12px" 
-              src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator&theme=0" 
-              width="100%" height="100%" frameborder="0" 
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-              loading="lazy">
-      </iframe>
+    
+    <!-- Layout para Mobile -->
+    <div id="mobile-layout">
+      <div class="VINHETA"></div>
+      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+        <div class="CABEÇALHO"></div>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+        <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+        <div class="BOTÃO_SPOTIFY scale-on-hover"></div>
+      </a>
+      <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
+        <div class="BOTÃO_PARA_OUVIR_A_MÚSICA scale-on-hover"></div>
+      </a>
+      <a href="https://www.youtube.com/@sojosh_" target="_blank">
+        <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
+      </a>
+      <a href="https://www.tiktok.com/@sojosh_" target="_blank">
+        <div class="BOTÃO_TIKTOK scale-on-hover"></div>
+      </a>
+      <a href="https://www.instagram.com/sojosh_" target="_blank">
+        <div class="BOTÃO_INSTAGRAM scale-on-hover"></div>
+      </a>
+      <div class="LINK_INCORPORADO">
+        <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator&theme=0" 
+                width="100%" height="100%" frameborder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+        </iframe>
+      </div>
     </div>
   </div>
   
