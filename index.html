@@ -11,10 +11,16 @@
       w.TiktokAnalyticsObject = t;
       var ttq = w[t] = w[t] || [];
       ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
-      ttq.setAndDefer = function(t, e) { t[e] = function() { t.push([e].concat(Array.prototype.slice.call(arguments,0))) } };
-      for(var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+      ttq.setAndDefer = function(t, e) {
+        t[e] = function() { t.push([e].concat(Array.prototype.slice.call(arguments,0))) }
+      };
+      for(var i = 0; i < ttq.methods.length; i++) {
+        ttq.setAndDefer(ttq, ttq.methods[i]);
+      }
       ttq.instance = function(t) {
-        for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]);
+        for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) {
+          ttq.setAndDefer(e, ttq.methods[n]);
+        }
         return e;
       };
       ttq.load = function(e, n) {
@@ -68,7 +74,7 @@
   <!-- End Meta Pixel Code -->
 
   <style>
-    /* RESET & CONFIG GLOBAL */
+    /* RESET & CONFIG GLOBAIS */
     * {
       margin: 0;
       padding: 0;
@@ -93,9 +99,9 @@
     }
     
     /* --- Estilos Desktop --- */
-    /* Cada classe usa os arquivos e dimensões conforme especificado */
     .CABEÇALHO {
       background-image: url("images/MODELO_0000_CABEÇALHO.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 528px;
       top: 118px;
@@ -105,6 +111,7 @@
     }
     .BOTÃO_YOUTUBE {
       background-image: url("images/MODELO_0001_BOTÃO-YOUTUBE.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 2074px;
       top: 2016px;
@@ -114,6 +121,7 @@
     }
     .BOTÃO_TIKTOK {
       background-image: url("images/MODELO_0002_BOTÃO-TIKTOK.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 1896px;
       top: 2008px;
@@ -123,6 +131,7 @@
     }
     .BOTÃO_INSTAGRAM {
       background-image: url("images/MODELO_0003_BOTÃO-INSTAGRAM.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 1713px;
       top: 2007px;
@@ -132,6 +141,7 @@
     }
     .BOTÃO_PARA_OUVIR_A_MÚSICA {
       background-image: url("images/MODELO_0004_BOTÃO-PARA-OUVIR-A-MÚSICA.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 1312px;
       top: 1700px;
@@ -141,7 +151,8 @@
     }
     .VINHETA {
       background-image: url("images/MODELO_0005_VINHETA.png");
-      position: fixed; /* Travada */
+      background-size: 100% 100%;
+      position: fixed;
       left: -348px;
       top: -590px;
       width: 4584px;
@@ -150,6 +161,7 @@
     }
     .BOTÃO_SPOTIFY {
       background-image: url("images/MODELO_0006_BOTÃO-SPOTIFY.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 1868px;
       top: 1509px;
@@ -159,6 +171,7 @@
     }
     .CAPA_DA_MÚSICA {
       background-image: url("images/MODELO_0007_CAPA-DA-MÚSICA.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 1380px;
       top: 530px;
@@ -167,14 +180,15 @@
       z-index: 2;
       transition: transform 0.5s ease;
     }
-    /* Container para o embed do Spotify (sem fundo preto) */
+    /* Alteração: Centralizar o container do embed */
     .LINK_INCORPORADO {
       position: absolute;
-      left: 719px;
+      left: 50%;
       top: 785px;
       width: 2401px;
       height: 1111px;
       z-index: 3;
+      transform: translateX(-50%);
     }
     /* Animação de escala para hover */
     .scale-on-hover:hover {
@@ -183,14 +197,13 @@
     }
     
     /* Container do layout Desktop */
-    #desktop-layout {
-      display: block;
-    }
+    #desktop-layout { display: block; }
     
     /* --- Estilos Mobile --- */
     @media screen and (max-width: 1024px) {
       .CABEÇALHO {
         background-image: url("images/MODELO-MOBILE_0006_CABEÇALHO.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 149px;
         top: 601px;
@@ -200,6 +213,7 @@
       }
       .BOTÃO_YOUTUBE {
         background-image: url("images/MODELO-MOBILE_0001_BOTÃO-YOUTUBE.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 1210px;
         top: 3627px;
@@ -209,6 +223,7 @@
       }
       .BOTÃO_TIKTOK {
         background-image: url("images/MODELO-MOBILE_0002_BOTÃO-TIKTOK.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 1032px;
         top: 3619px;
@@ -218,6 +233,7 @@
       }
       .BOTÃO_INSTAGRAM {
         background-image: url("images/MODELO-MOBILE_0003_BOTÃO-INSTAGRAM.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 849px;
         top: 3618px;
@@ -227,6 +243,7 @@
       }
       .BOTÃO_SPOTIFY {
         background-image: url("images/MODELO-MOBILE_0004_BOTÃO-SPOTIFY.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 1028px;
         top: 2693px;
@@ -236,6 +253,7 @@
       }
       .CAPA_DA_MÚSICA {
         background-image: url("images/MODELO-MOBILE_0005_CAPA-DA-MÚSICA.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 540px;
         top: 1370px;
@@ -246,6 +264,7 @@
       }
       .BOTÃO_PARA_OUVIR_A_MÚSICA {
         background-image: url("images/MODELO-MOBILE_0000_BOTÃO-PARA-OUVIR-A-MÚSICA.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 453px;
         top: 2949px;
@@ -255,7 +274,8 @@
       }
       .VINHETA {
         background-image: url("images/MODELO-MOBILE_0007_VINHETA.png");
-        position: fixed; /* Travada */
+        background-size: 100% 100%;
+        position: fixed;
         left: -1188px;
         top: 0px;
         width: 4584px;
@@ -264,14 +284,15 @@
       }
       .LINK_INCORPORADO {
         position: absolute;
-        left: 268px;
+        left: 50%;
         top: 2189px;
         width: 1624px;
         height: 1375px;
         z-index: 20;
+        transform: translateX(-50%);
       }
       
-      /* Exibir layout Mobile e esconder o Desktop */
+      /* Exibe o layout Mobile e esconde o Desktop */
       #mobile-layout { display: block; }
       #desktop-layout { display: none; }
     }
@@ -297,11 +318,11 @@
   <div id="desktop-layout">
     <!-- Vinheta (fixada) -->
     <div class="VINHETA"></div>
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho (redireciona para Spotify) -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="CABEÇALHO"></div>
     </a>
-    <!-- Capa da Música (clique leva ao Spotify) -->
+    <!-- Capa da Música -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
     </a>
@@ -313,7 +334,7 @@
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="BOTÃO_PARA_OUVIR_A_MÚSICA scale-on-hover"></div>
     </a>
-    <!-- Ícones de Redes Sociais -->
+    <!-- Ícones de redes sociais -->
     <a href="https://www.youtube.com/@sojosh_" target="_blank">
       <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
     </a>
