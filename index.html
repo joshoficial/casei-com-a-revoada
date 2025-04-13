@@ -52,12 +52,12 @@
   <!-- End Meta Pixel Code -->
   
   <style>
-    /* Reset e configuração base */
+    /* Reset e configurações base */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-      min-height: 2160px; /* altura total da página */
+      min-height: 2160px; /* Dimensão total da página */
       overflow-x: hidden;
     }
     
@@ -88,7 +88,7 @@
       opacity: 1;
     }
     
-    /* Vinheta fixa cobrindo toda a tela, com redimensionamento automático */
+    /* VINHETA fixa (cobre toda a tela, responsiva) */
     .VINHETA {
       position: fixed;
       top: 0;
@@ -98,10 +98,10 @@
       background-size: cover;
       background-repeat: no-repeat;
       z-index: 6;
-      /* A imagem será definida de acordo com o device via background-image */
+      background-image: url("images/VINHETA.png"); /* para desktop */
     }
     
-    /* Estilos Desktop (padrão) */
+    /* Elementos Desktop */
     .CAPA_DA_MÚSICA {
       background-image: url("images/CAPA DA MÚSICA.png");
       position: absolute;
@@ -172,18 +172,34 @@
       z-index: 16;
     }
     
-    /* Container do embed do Spotify (localizado abaixo da VINHETA) */
+    /* Container do embed do Spotify (abaixo da vinheta) */
     .spotify-embed-container {
       position: absolute;
-      top: 1080px; /* posicionado abaixo da altura da vinheta desktop */
+      top: 1080px; /* posicionado abaixo da vinheta desktop */
       left: 360px; /* 360px de margem à esquerda */
-      width: calc(100% - 720px); /* 360px de margem à direita também */
-      z-index: 2; /* fica abaixo da VINHETA */
+      width: calc(100% - 720px); /* 360px de margem à direita */
+      z-index: 2; /* ficará por baixo da vinheta */
       text-align: center;
       margin-top: 20px;
     }
     
-    /* Efeito de escala ao clicar (para ícones interativos) */
+    /* Transição e animação dos ícones (hover e active) */
+    .CAPA_DA_MÚSICA,
+    .BOTÃO_SPOTIFY,
+    .BOTÃO_PARA_OUVIR_A_MÚSICA,
+    .BOTÃO_INSTAGRAM,
+    .BOTÃO_TIKTOK_,
+    .BOTÃO_YOUTUBE,
+    .CABEÇALHO {
+      transition: transform 1s ease-out;
+    }
+    .CAPA_DA_MÚSICA:hover,
+    .BOTÃO_SPOTIFY:hover,
+    .BOTÃO_PARA_OUVIR_A_MÚSICA:hover,
+    .BOTÃO_INSTAGRAM:hover,
+    .BOTÃO_TIKTOK_:hover,
+    .BOTÃO_YOUTUBE:hover,
+    .CABEÇALHO:hover,
     .CAPA_DA_MÚSICA:active,
     .BOTÃO_SPOTIFY:active,
     .BOTÃO_PARA_OUVIR_A_MÚSICA:active,
@@ -192,41 +208,48 @@
     .BOTÃO_YOUTUBE:active,
     .CABEÇALHO:active {
       transform: scale(1.1);
+      /* 0,5s de entrada (hover) e 1s de saída (quando o mouse sai) */
     }
     
     /* Media Queries para Mobile */
     @media (max-width: 768px) {
       .CAPA_DA_MÚSICA {
-        background-image: url("images/m_CAPA DA MÚSICA.png");
+        background-image: url("images/m_CAPA-DA-MÚSICA.png");
+        /* As posições podem ser ajustadas se necessário para mobile */
       }
       .BOTÃO_SPOTIFY {
-        background-image: url("images/m_BOTÃO SPOTIFY.png");
+        background-image: url("images/m_BOTÃO-SPOTIFY.png");
       }
       .VINHETA {
         background-image: url("images/m_VINHETA.png");
-        /* Utilizando os valores fornecidos para mobile */
         left: -174px;
         top: -295px;
         width: 2292px;
         height: 1375px;
       }
       .BOTÃO_PARA_OUVIR_A_MÚSICA {
-        background-image: url("images/m_BOTÃO PARA OUVIR A MÚSICA.png");
+        background-image: url("images/m_BOTÃO-PARA-OUVIR-A-MÚSICA.png");
       }
       .BOTÃO_INSTAGRAM {
-        background-image: url("images/m_BOTÃO INSTAGRAM.png");
+        background-image: url("images/m_BOTÃO-INSTAGRAM.png");
       }
       .BOTÃO_TIKTOK_ {
-        background-image: url("images/m_BOTÃO TIKTOK .png");
+        background-image: url("images/m_BOTÃO-TIKTOK.png");
       }
       .BOTÃO_YOUTUBE {
-        background-image: url("images/m_BOTÃO YOUTUBE.png");
+        background-image: url("images/m_BOTÃO-YOUTUBE.png");
       }
       .CABEÇALHO {
         background-image: url("images/m_CABEÇALHO.png");
+        /* Ajustando para que não seja cortado – aqui usamos 100% de largura */
+        left: 0;
+        top: 20px;
+        width: 100%;
+        height: auto;
+        background-size: contain;
       }
       .spotify-embed-container {
-        /* Ajusta a posição do embed para mobile, se necessário */
+        /* Se necessário, ajuste a posição do embed para mobile */
         top: 1375px;
         left: 360px;
         width: calc(100% - 720px);
@@ -235,29 +258,26 @@
   </style>
 </head>
 <body>
-  <!-- Container de fundo: Placeholder + Vídeo (os dois cobrem toda a tela) -->
+  <!-- Container de fundo: Placeholder + Vídeo -->
   <div class="background-container">
-    <!-- Placeholder do vídeo com suporte para mobile e desktop via <picture> -->
+    <!-- Placeholder para vídeo com suporte via <picture> -->
     <picture id="video-placeholder">
       <source srcset="images/m_VIDEO-DE-FUNDO FOTO 1.jpg" media="(max-width: 768px)">
       <img src="images/VIDEO-DE-FUNDO FOTO 1.jpg" alt="Placeholder do vídeo">
     </picture>
-    <!-- Vídeo de fundo com seleção automática via <source> -->
+    <!-- Vídeo de fundo com fontes diferentes para desktop e mobile -->
     <video id="bg-video" class="bg-video" autoplay muted loop playsinline>
-      <!-- Para desktop: -->
       <source src="MODELO_0008_VIDEO.mp4" type="video/mp4" media="(min-width: 769px)">
-      <!-- Para mobile: -->
       <source src="MODELO-MOBILE_0008_VIDEO-DE-FUNDO.mp4" type="video/mp4" media="(max-width: 768px)">
       Seu navegador não suporta a tag de vídeo.
     </video>
   </div>
   
-  <!-- VINHETA fixa (camada superior de fundo) -->
+  <!-- VINHETA fixa -->
   <div class="VINHETA"></div>
   
-  <!-- Elementos posicionados conforme o CSS -->
+  <!-- Elementos interativos (links e botões) -->
   <div class="CAPA_DA_MÚSICA"></div>
-  <!-- BOTÃO_SPOTIFY como link, direcionando para o perfil do Spotify -->
   <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank" class="BOTÃO_SPOTIFY"></a>
   <div class="BOTÃO_PARA_OUVIR_A_MÚSICA"></div>
   <a href="https://www.instagram.com/sojosh_/" target="_blank" class="BOTÃO_INSTAGRAM"></a>
@@ -265,7 +285,7 @@
   <a href="https://www.youtube.com/@sojosh_" target="_blank" class="BOTÃO_YOUTUBE"></a>
   <div class="CABEÇALHO"></div>
   
-  <!-- Seção do embed do Spotify (localizada fora da área inicial visível, com margens laterais de 360px) -->
+  <!-- Seção do embed do Spotify (ficará na parte inferior, com margens laterais de 360px) -->
   <div class="spotify-embed-container">
     <iframe src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </div>
