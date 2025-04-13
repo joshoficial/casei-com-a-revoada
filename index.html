@@ -11,33 +11,33 @@
       w.TiktokAnalyticsObject = t;
       var ttq = w[t] = w[t] || [];
       ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
-      ttq.setAndDefer = function(t, e) {
-        t[e] = function() { t.push([e].concat(Array.prototype.slice.call(arguments,0))) }
+      ttq.setAndDefer = function(obj, method) {
+        obj[method] = function() { obj.push([method].concat(Array.prototype.slice.call(arguments,0))) }
       };
       for(var i = 0; i < ttq.methods.length; i++) {
         ttq.setAndDefer(ttq, ttq.methods[i]);
       }
-      ttq.instance = function(t) {
-        for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) {
+      ttq.instance = function(id) {
+        for (var e = ttq._i[id] || [], n = 0; n < ttq.methods.length; n++) {
           ttq.setAndDefer(e, ttq.methods[n]);
         }
         return e;
       };
-      ttq.load = function(e, n) {
-        var r = "https://analytics.tiktok.com/i18n/pixel/events.js", o = n && n.partner;
+      ttq.load = function(id, config) {
+        var r = "https://analytics.tiktok.com/i18n/pixel/events.js", partner = config && config.partner;
         ttq._i = ttq._i || {};
-        ttq._i[e] = [];
-        ttq._i[e]._u = r;
+        ttq._i[id] = [];
+        ttq._i[id]._u = r;
         ttq._t = ttq._t || {};
-        ttq._t[e] = +new Date;
+        ttq._t[id] = +new Date;
         ttq._o = ttq._o || {};
-        ttq._o[e] = n || {};
-        n = document.createElement("script");
-        n.type = "text/javascript";
-        n.async = !0;
-        n.src = r + "?sdkid=" + e + "&lib=" + t;
-        e = document.getElementsByTagName("script")[0];
-        e.parentNode.insertBefore(n,e);
+        ttq._o[id] = config || {};
+        config = document.createElement("script");
+        config.type = "text/javascript";
+        config.async = true;
+        config.src = r + "?sdkid=" + id + "&lib=" + t;
+        id = document.getElementsByTagName("script")[0];
+        id.parentNode.insertBefore(config,id);
       };
       ttq.load('CVT9DG3C77U29KB3QVLG');
       ttq.page();
@@ -52,13 +52,13 @@
       n = f.fbq = function() {
         n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
-      if(!f._fbq) f._fbq = n;
+      if(!f._fbq)f._fbq=n;
       n.push = n;
-      n.loaded = !0;
+      n.loaded = true;
       n.version = '2.0';
       n.queue = [];
       t = b.createElement(e);
-      t.async = !0;
+      t.async = true;
       t.src = v;
       s = b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t, s)
@@ -106,7 +106,7 @@
       height: 7282px;
       z-index: 1;
     }
-    /* Vídeo de fundo real */
+    /* O vídeo será exibido via tag <video> com a mesma posição e tamanho */
     .VIDEO {
       position: absolute;
       left: -1417px;
@@ -128,6 +128,7 @@
       transition: transform 0.5s ease;
     }
     .LINK_INCORPORADO {
+      /* Container com as dimensões desejadas para o embed */
       position: absolute;
       left: 134px;
       top: 2054px;
@@ -145,10 +146,11 @@
       height: 53px;
       z-index: 5;
     }
+    /* VINHETA: Alterado para position: fixed para que fique fixa na tela */
     .VINHETA {
       background-image: url("images/VINHETA.png");
       background-size: 100% 100%;
-      position: absolute;
+      position: fixed;
       left: -174px;
       top: -295px;
       width: 2292px;
@@ -238,7 +240,7 @@
       .VINHETA {
         background-image: url("images/VINHETA.png");
         background-size: 100% 100%;
-        position: absolute;
+        position: fixed;
         left: -618px;
         top: 0px;
         width: 2292px;
@@ -332,22 +334,22 @@
 <body>
   <!-- ================= DESKTOP LAYOUT ================= -->
   <div id="desktop-layout">
-    <!-- Fundo -->
+    <!-- Fundo estático -->
     <div class="BACGROUND"></div>
     <!-- Poster de fundo (aparece até o vídeo carregar) -->
     <div class="FOTO"></div>
-    <!-- Vídeo de fundo -->
+    <!-- Vídeo de fundo real -->
     <video class="VIDEO" autoplay loop muted playsinline poster="images/VIDEO-DE-FUNDO FOTO 1.png">
       <source src="videos/MODELO_0008_VIDEO.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
     </video>
     
     <!-- Elementos interativos -->
-    <!-- CAPA DA MÚSICA (com animação de hover e link para Spotify) -->
+    <!-- CAPA DA MÚSICA com animação de hover (link para Spotify) -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
     </a>
-    <!-- Container do LINK INCORPORADO (embed do Spotify) -->
+    <!-- Container do LINK INCORPORADO com embed do Spotify – dimensões definidas -->
     <div class="LINK_INCORPORADO">
       <iframe style="border-radius:12px" 
               src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator&theme=0" 
@@ -376,7 +378,7 @@
     <a href="https://www.youtube.com/@sojosh_" target="_blank">
       <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
     </a>
-    <!-- CABEÇALHO (por cima de VINHETA) -->
+    <!-- CABEÇALHO (sobre VINHETA) -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="CABEÇALHO scale-on-hover"></div>
     </a>
@@ -443,20 +445,20 @@
     window.addEventListener("resize", updateLayout);
     window.addEventListener("load", updateLayout);
 
-    // ESCONDE A CAMADA .FOTO APENAS QUANDO O VÍDEO CARREGAR (para Desktop e Mobile)
+    // Oculta a camada FOTO quando o vídeo carregar (para Desktop e Mobile)
     document.addEventListener("DOMContentLoaded", function() {
-      // Para Desktop
+      // Desktop
       var videoDesktop = document.querySelector("#desktop-layout .VIDEO");
       var fotoDesktop = document.querySelector("#desktop-layout .FOTO");
-      if (videoDesktop && fotoDesktop) {
+      if(videoDesktop && fotoDesktop) {
         videoDesktop.addEventListener("loadeddata", function() {
           fotoDesktop.style.display = "none";
         });
       }
-      // Para Mobile
+      // Mobile
       var videoMobile = document.querySelector("#mobile-layout .VIDEO");
       var fotoMobile = document.querySelector("#mobile-layout .FOTO");
-      if (videoMobile && fotoMobile) {
+      if(videoMobile && fotoMobile) {
         videoMobile.addEventListener("loadeddata", function() {
           fotoMobile.style.display = "none";
         });
