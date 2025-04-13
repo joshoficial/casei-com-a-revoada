@@ -12,9 +12,7 @@
       var ttq = w[t] = w[t] || [];
       ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
       ttq.setAndDefer = function(t, e) {
-        t[e] = function() {
-          t.push([e].concat(Array.prototype.slice.call(arguments,0)))
-        }
+        t[e] = function() { t.push([e].concat(Array.prototype.slice.call(arguments,0))) }
       };
       for(var i = 0; i < ttq.methods.length; i++) {
         ttq.setAndDefer(ttq, ttq.methods[i]);
@@ -88,8 +86,7 @@
       overflow-x: hidden;
     }
     
-    /* ====================== DESKTOP CSS ====================== */
-    /* Fundo estático */
+    /* ===================== DESKTOP CSS ===================== */
     .BACGROUND {
       background-image: url("images/BACGROUND.png");
       position: absolute;
@@ -99,7 +96,6 @@
       height: 2160px;
       z-index: 1;
     }
-    /* Poster de fundo (FOTO) */
     .FOTO {
       background-image: url("images/VIDEO-DE-FUNDO FOTO 1.png");
       background-size: 100% 100%;
@@ -110,7 +106,7 @@
       height: 7282px;
       z-index: 1;
     }
-    /* Vídeo de fundo real (substitua background-image por <video> no HTML) */
+    /* Vídeo de fundo real */
     .VIDEO {
       position: absolute;
       left: -1417px;
@@ -132,8 +128,6 @@
       transition: transform 0.5s ease;
     }
     .LINK_INCORPORADO {
-      /* Mesmo tamanho e proporção desejada */
-      /* Mesmo que não utilize o png, usaremos essas dimensões como container para o embed */
       position: absolute;
       left: 134px;
       top: 2054px;
@@ -212,7 +206,7 @@
       z-index: 16;
     }
     
-    /* ====================== MOBILE CSS ====================== */
+    /* ===================== MOBILE CSS ===================== */
     @media screen and (max-width: 1024px) {
       .FOTO {
         background-image: url("images/VIDEO-DE-FUNDO FOTO 1.png");
@@ -225,7 +219,6 @@
         z-index: 1;
       }
       .VIDEO {
-        /* Vídeo de fundo para mobile */
         position: absolute;
         left: -1417px;
         top: -2276px;
@@ -327,7 +320,6 @@
       #mobile-layout { display: block; }
       #desktop-layout { display: none; }
     }
-    /* Oculta o layout Mobile para telas maiores */
     #mobile-layout { display: none; }
     
     /* ================= ANIMAÇÕES DE HOVER ================= */
@@ -340,22 +332,22 @@
 <body>
   <!-- ================= DESKTOP LAYOUT ================= -->
   <div id="desktop-layout">
-    <!-- Fundo estático -->
+    <!-- Fundo -->
     <div class="BACGROUND"></div>
-    <!-- Imagem de fundo (poster) -->
+    <!-- Poster de fundo (aparece até o vídeo carregar) -->
     <div class="FOTO"></div>
-    <!-- Vídeo de fundo (para reproduzir o vídeo) -->
+    <!-- Vídeo de fundo -->
     <video class="VIDEO" autoplay loop muted playsinline poster="images/VIDEO-DE-FUNDO FOTO 1.png">
       <source src="videos/MODELO_0008_VIDEO.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
     </video>
     
     <!-- Elementos interativos -->
-    <!-- CAPA DA MÚSICA com animação de hover (link para Spotify) -->
+    <!-- CAPA DA MÚSICA (com animação de hover e link para Spotify) -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
     </a>
-    <!-- LINK INCORPORADO – container para embed do Spotify, com as dimensões desejadas -->
+    <!-- Container do LINK INCORPORADO (embed do Spotify) -->
     <div class="LINK_INCORPORADO">
       <iframe style="border-radius:12px" 
               src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator&theme=0" 
@@ -384,17 +376,17 @@
     <a href="https://www.youtube.com/@sojosh_" target="_blank">
       <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
     </a>
-    <!-- CABEÇALHO (acima de VINHETA, para ficar por cima) -->
+    <!-- CABEÇALHO (por cima de VINHETA) -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="CABEÇALHO scale-on-hover"></div>
     </a>
-    <!-- VINHETA (fica fixa conforme especificado) -->
+    <!-- VINHETA (fixada) -->
     <div class="VINHETA"></div>
   </div>
   
   <!-- ================= MOBILE LAYOUT ================= -->
   <div id="mobile-layout">
-    <!-- Imagem de fundo (poster) -->
+    <!-- Poster de fundo -->
     <div class="FOTO"></div>
     <!-- Vídeo de fundo para Mobile -->
     <video class="VIDEO" autoplay loop muted playsinline poster="images/VIDEO-DE-FUNDO FOTO 1.png">
@@ -402,7 +394,8 @@
       Seu navegador não suporta vídeo.
     </video>
     
-    <!-- LINK INCORPORADO (usando as dimensões fornecidas) -->
+    <!-- Elementos interativos -->
+    <!-- Container do LINK INCORPORADO -->
     <div class="LINK_INCORPORADO"></div>
     <!-- CAPA DA MÚSICA -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
@@ -449,6 +442,26 @@
     }
     window.addEventListener("resize", updateLayout);
     window.addEventListener("load", updateLayout);
+
+    // ESCONDE A CAMADA .FOTO APENAS QUANDO O VÍDEO CARREGAR (para Desktop e Mobile)
+    document.addEventListener("DOMContentLoaded", function() {
+      // Para Desktop
+      var videoDesktop = document.querySelector("#desktop-layout .VIDEO");
+      var fotoDesktop = document.querySelector("#desktop-layout .FOTO");
+      if (videoDesktop && fotoDesktop) {
+        videoDesktop.addEventListener("loadeddata", function() {
+          fotoDesktop.style.display = "none";
+        });
+      }
+      // Para Mobile
+      var videoMobile = document.querySelector("#mobile-layout .VIDEO");
+      var fotoMobile = document.querySelector("#mobile-layout .FOTO");
+      if (videoMobile && fotoMobile) {
+        videoMobile.addEventListener("loadeddata", function() {
+          fotoMobile.style.display = "none";
+        });
+      }
+    });
   </script>
 </body>
 </html>
