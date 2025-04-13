@@ -12,7 +12,9 @@
       var ttq = w[t] = w[t] || [];
       ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
       ttq.setAndDefer = function(t, e) {
-        t[e] = function() { t.push([e].concat(Array.prototype.slice.call(arguments,0))) }
+        t[e] = function() {
+          t.push([e].concat(Array.prototype.slice.call(arguments,0)))
+        }
       };
       for(var i = 0; i < ttq.methods.length; i++) {
         ttq.setAndDefer(ttq, ttq.methods[i]);
@@ -39,7 +41,6 @@
         e = document.getElementsByTagName("script")[0];
         e.parentNode.insertBefore(n,e);
       };
-
       ttq.load('CVT9DG3C77U29KB3QVLG');
       ttq.page();
     }(window, document, 'ttq');
@@ -74,7 +75,7 @@
   <!-- End Meta Pixel Code -->
 
   <style>
-    /* RESET E CONFIGURAÇÕES GLOBAIS */
+    /* RESET & CONFIGURAÇÕES GLOBAIS */
     * {
       margin: 0;
       padding: 0;
@@ -87,37 +88,41 @@
       overflow-x: hidden;
     }
     
-    /* ================= DESKTOP CSS ================= */
+    /* ====================== DESKTOP CSS ====================== */
+    /* Fundo estático */
     .BACGROUND {
       background-image: url("images/BACGROUND.png");
       position: absolute;
-      left: 0px;
-      top: 0px;
+      left: 0;
+      top: 0;
       width: 1920px;
       height: 2160px;
       z-index: 1;
     }
+    /* Poster de fundo (FOTO) */
     .FOTO {
-      background-image: url("images/VIDEO-DE-FUNDO FOTO 1.jpg");
+      background-image: url("images/VIDEO-DE-FUNDO FOTO 1.png");
+      background-size: 100% 100%;
       position: absolute;
-      left: -1535px;
-      top: -694px;
-      width: 5183px;
-      height: 2915px;
-      z-index: 2;
+      left: -1417px;
+      top: -2276px;
+      width: 4098px;
+      height: 7282px;
+      z-index: 1;
     }
+    /* Vídeo de fundo real (substitua background-image por <video> no HTML) */
     .VIDEO {
-      /* Note: para vídeos o ideal é usar a tag <video>; aqui usamos a regra do CSS conforme enviado */
-      background-image: url("videos/MODELO_0008_VIDEO.mp4");
       position: absolute;
-      left: -1535px;
-      top: -694px;
-      width: 5183px;
-      height: 2915px;
-      z-index: 2;
+      left: -1417px;
+      top: -2276px;
+      width: 4098px;
+      height: 7282px;
+      z-index: 1;
+      object-fit: cover;
     }
     .CAPA_DA_MÚSICA {
       background-image: url("images/CAPA-DA-MÚSICA.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 687px;
       top: 245px;
@@ -127,16 +132,18 @@
       transition: transform 0.5s ease;
     }
     .LINK_INCORPORADO {
-      background-image: url("images/LINK-INCORPORADO.png");
+      /* Mesmo tamanho e proporção desejada */
+      /* Mesmo que não utilize o png, usaremos essas dimensões como container para o embed */
       position: absolute;
-      left: 363px;
-      top: 1162px;
-      width: 1201px;
-      height: 556px;
-      z-index: 4;
+      left: 134px;
+      top: 2054px;
+      width: 812px;
+      height: 688px;
+      z-index: 2;
     }
     .BOTÃO_SPOTIFY {
       background-image: url("images/BOTÃO-SPOTIFY.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 934px;
       top: 737px;
@@ -146,6 +153,7 @@
     }
     .VINHETA {
       background-image: url("images/VINHETA.png");
+      background-size: 100% 100%;
       position: absolute;
       left: -174px;
       top: -295px;
@@ -155,6 +163,7 @@
     }
     .BOTÃO_PARA_OUVIR_A_MÚSICA {
       background-image: url("images/BOTÃO-PARA-OUVIR-A-MÚSICA.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 656px;
       top: 872px;
@@ -164,6 +173,7 @@
     }
     .BOTÃO_INSTAGRAM {
       background-image: url("images/BOTÃO-INSTAGRAM.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 829px;
       top: 2032px;
@@ -173,6 +183,7 @@
     }
     .BOTÃO_TIKTOK_ {
       background-image: url("images/BOTÃO TIKTOK .png");
+      background-size: 100% 100%;
       position: absolute;
       left: 947px;
       top: 2038px;
@@ -182,6 +193,7 @@
     }
     .BOTÃO_YOUTUBE {
       background-image: url("images/BOTÃO YOUTUBE.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 1057px;
       top: 2043px;
@@ -191,6 +203,7 @@
     }
     .CABEÇALHO {
       background-image: url("images/CABEÇALHO.png");
+      background-size: 100% 100%;
       position: absolute;
       left: 264px;
       top: 68px;
@@ -199,14 +212,11 @@
       z-index: 16;
     }
     
-    /* ================= MOBILE CSS ================= */
-    /* Aqui ajustamos os z-index para obedecer:
-       VINHETA fixa e acima de CAPA_DA_MÚSICA e BOTÃO_SPOTIFY,
-       e BOTÃO-PARA-OUVIR-A-MÚSICA e CABEÇALHO acima da VINHETA.
-    */
+    /* ====================== MOBILE CSS ====================== */
     @media screen and (max-width: 1024px) {
       .FOTO {
         background-image: url("images/VIDEO-DE-FUNDO FOTO 1.png");
+        background-size: 100% 100%;
         position: absolute;
         left: -1417px;
         top: -2276px;
@@ -215,16 +225,16 @@
         z-index: 1;
       }
       .VIDEO {
-        background-image: url("videos/MODELO-MOBILE_0008_VIDEO-DE-FUNDO.mp4");
+        /* Vídeo de fundo para mobile */
         position: absolute;
         left: -1417px;
         top: -2276px;
         width: 4098px;
         height: 7282px;
         z-index: 1;
+        object-fit: cover;
       }
       .LINK_INCORPORADO {
-        background-image: url("images/LINK INCORPORADO.png");
         position: absolute;
         left: 134px;
         top: 2054px;
@@ -232,51 +242,30 @@
         height: 688px;
         z-index: 2;
       }
-      /* Ajustando a ordem conforme solicitado:
-         CAPA_DA_MÚSICA: z-index 3,
-         BOTÃO_SPOTIFY: z-index 4,
-         VINHETA: z-index 5,
-         BOTÃO_PARA_OUVIR_A_MÚSICA: z-index 6,
-         Social icons e CABEÇALHO por cima */
-      .CAPA_DA_MÚSICA {
-        background-image: url("images/CAPA DA MÚSICA.png");
-        position: absolute;
-        left: 267px;
-        top: 503px;
-        width: 547px;
-        height: 457px;
-        z-index: 3;
-        transition: transform 0.5s ease;
-      }
-      .BOTÃO_SPOTIFY {
-        background-image: url("images/BOTÃO SPOTIFY.png");
-        position: absolute;
-        left: 447px;
-        top: 1075px;
-        width: 185px;
-        height: 182px;
-        z-index: 4;
-      }
       .VINHETA {
         background-image: url("images/VINHETA.png");
+        background-size: 100% 100%;
         position: absolute;
         left: -618px;
         top: 0px;
         width: 2292px;
         height: 1920px;
-        z-index: 5;
+        z-index: 3;
       }
-      .BOTÃO_PARA_OUVIR_A_MÚSICA {
-        background-image: url("images/BOTÃO PARA OUVIR A MÚSICA.png");
+      .CAPA_DA_MÚSICA {
+        background-image: url("images/CAPA DA MÚSICA.png");
+        background-size: 100% 100%;
         position: absolute;
-        left: 228px;
-        top: 1388px;
-        width: 628px;
-        height: 35px;
-        z-index: 6;
+        left: 267px;
+        top: 503px;
+        width: 547px;
+        height: 457px;
+        z-index: 4;
+        transition: transform 0.5s ease;
       }
       .BOTÃO_INSTAGRAM {
         background-image: url("images/BOTÃO INSTAGRAM.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 129px;
         top: 3155px;
@@ -286,6 +275,7 @@
       }
       .BOTÃO_TIKTOK {
         background-image: url("images/BOTÃO TIKTOK.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 495px;
         top: 3202px;
@@ -293,8 +283,19 @@
         height: 95px;
         z-index: 8;
       }
+      .BOTÃO_SPOTIFY {
+        background-image: url("images/BOTÃO SPOTIFY.png");
+        background-size: 100% 100%;
+        position: absolute;
+        left: 447px;
+        top: 1075px;
+        width: 185px;
+        height: 182px;
+        z-index: 13;
+      }
       .BOTÃO_YOUTUBE_ {
         background-image: url("images/BOTÃO YOUTUBE .png");
+        background-size: 100% 100%;
         position: absolute;
         left: 803px;
         top: 3216px;
@@ -302,24 +303,34 @@
         height: 65px;
         z-index: 9;
       }
+      .BOTÃO_PARA_OUVIR_A_MÚSICA {
+        background-image: url("images/BOTÃO PARA OUVIR A MÚSICA.png");
+        background-size: 100% 100%;
+        position: absolute;
+        left: 228px;
+        top: 1388px;
+        width: 628px;
+        height: 35px;
+        z-index: 15;
+      }
       .CABEÇALHO {
         background-image: url("images/CABEÇALHO.png");
+        background-size: 100% 100%;
         position: absolute;
         left: 67px;
         top: 254px;
         width: 947px;
         height: 37px;
-        z-index: 10;
+        z-index: 21;
       }
-      
       /* Exibe o layout Mobile e oculta o Desktop */
       #mobile-layout { display: block; }
       #desktop-layout { display: none; }
     }
-    /* Oculta o layout Mobile em telas maiores */
+    /* Oculta o layout Mobile para telas maiores */
     #mobile-layout { display: none; }
     
-    /* ================= Animações de Hover ================= */
+    /* ================= ANIMAÇÕES DE HOVER ================= */
     .scale-on-hover:hover {
       transform: scale(1.1);
       transition: transform 0.5s;
@@ -327,24 +338,32 @@
   </style>
 </head>
 <body>
-  <!-- Layout Desktop -->
+  <!-- ================= DESKTOP LAYOUT ================= -->
   <div id="desktop-layout">
-    <!-- Fundo -->
+    <!-- Fundo estático -->
     <div class="BACGROUND"></div>
-    <!-- Camada FOTO (imagem de fundo, ex: "VIDEO-DE-FUNDO FOTO 1") -->
+    <!-- Imagem de fundo (poster) -->
     <div class="FOTO"></div>
-    <!-- Camada VIDEO (caso queira substituir FOTO pelo vídeo "MODELO_0008_VIDEO") -->
-    <div class="VIDEO"></div>
+    <!-- Vídeo de fundo (para reproduzir o vídeo) -->
+    <video class="VIDEO" autoplay loop muted playsinline poster="images/VIDEO-DE-FUNDO FOTO 1.png">
+      <source src="videos/MODELO_0008_VIDEO.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
     
-    <!-- Elementos interativos: -->
-    <!-- CAPA DA MÚSICA com animação de hover -->
+    <!-- Elementos interativos -->
+    <!-- CAPA DA MÚSICA com animação de hover (link para Spotify) -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="CAPA_DA_MÚSICA scale-on-hover"></div>
     </a>
-    <!-- LINK INCORPORADO (embed do Spotify) -->
-    <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
-      <div class="LINK_INCORPORADO"></div>
-    </a>
+    <!-- LINK INCORPORADO – container para embed do Spotify, com as dimensões desejadas -->
+    <div class="LINK_INCORPORADO">
+      <iframe style="border-radius:12px" 
+              src="https://open.spotify.com/embed/artist/1LqoE7oZSh8sej4t4G7tIh?utm_source=generator&theme=0" 
+              width="100%" height="100%" frameborder="0" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+      </iframe>
+    </div>
     <!-- BOTÃO SPOTIFY -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="BOTÃO_SPOTIFY scale-on-hover"></div>
@@ -365,22 +384,25 @@
     <a href="https://www.youtube.com/@sojosh_" target="_blank">
       <div class="BOTÃO_YOUTUBE scale-on-hover"></div>
     </a>
-    <!-- CABEÇALHO (acima de VINHETA) -->
+    <!-- CABEÇALHO (acima de VINHETA, para ficar por cima) -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
       <div class="CABEÇALHO scale-on-hover"></div>
     </a>
-    <!-- VINHETA fica fixa abaixo dos BOTÃO-PARA-OUVIR e CABEÇALHO? 
-         Conforme solicitado, VINHETA deve ficar fixada e acima de CAPA, BOTÃO-SPOTIFY, VIDEO/FOTO,
-         mas BOTÃO-PARA-OUVIR e CABEÇALHO ficam acima dela. 
-         Aqui VINHETA já está com z-index 6, inferior a BOTÃO-PARA-OUVIR (7) and CABEÇALHO (16). -->
+    <!-- VINHETA (fica fixa conforme especificado) -->
+    <div class="VINHETA"></div>
   </div>
   
-  <!-- Layout Mobile -->
+  <!-- ================= MOBILE LAYOUT ================= -->
   <div id="mobile-layout">
-    <!-- Fundo: FOTO e VIDEO para Mobile -->
+    <!-- Imagem de fundo (poster) -->
     <div class="FOTO"></div>
-    <div class="VIDEO"></div>
-    <!-- LINK INCORPORADO -->
+    <!-- Vídeo de fundo para Mobile -->
+    <video class="VIDEO" autoplay loop muted playsinline poster="images/VIDEO-DE-FUNDO FOTO 1.png">
+      <source src="videos/MODELO-MOBILE_0008_VIDEO-DE-FUNDO.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+    
+    <!-- LINK INCORPORADO (usando as dimensões fornecidas) -->
     <div class="LINK_INCORPORADO"></div>
     <!-- CAPA DA MÚSICA -->
     <a href="https://open.spotify.com/intl-pt/artist/1LqoE7oZSh8sej4t4G7tIh?si=unzo2wbSSCO16112OyC4Bg" target="_blank">
