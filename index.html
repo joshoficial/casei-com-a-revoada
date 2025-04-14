@@ -116,43 +116,43 @@
   transform: scale(1.2);
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
 
-    /* 🧷 Botão e texto com animação */
-    .bottom-text {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 3vw;
-    }
+.bottom-text {
+  font-size: 1.2rem;
+  margin-top: auto; /* 👈 empurra para a parte de baixo da .main-content */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6vw; /* 👈 gap igual ao do topo */
+}
 
-    .bottom-text a {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 3vw;
-      font-weight: bold;
-      text-decoration: underline;
-      color: white;
-      margin-right: 5px;
-      transition: transform 0.3s ease;
-      
-    }
+.bottom-text a {
+  display: flex;
+  gap: 6vw;
+  text-decoration: underline;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
 
-    .bottom-text a:hover {
-      transform: scale(1.1);
-    }
+.bottom-text a:hover {
+  transform: scale(1.1);
+}
 
-    .bottom-text span {
-      margin: 0 3px;
-      transition: transform 0.3s ease;
-      display: inline-block;
-    }
+.bottom-text span {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
 
-    .bottom-text span:hover {
-      transform: scale(1.1);
-    }
+.bottom-text span:hover {
+  transform: scale(1.1);
+}
 
     /* 📱 Responsivo */
     @media (max-width: 600px) {
