@@ -5,20 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casei com a Revoada</title>
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
       height: 100%;
       overflow: hidden;
       font-family: Arial, sans-serif;
+      background: red; /* Teste pra ver se o fundo aparece */
       color: white;
     }
 
-    /* 🎥 Fundo YouTube */
     .youtube-bg {
       position: fixed;
       top: 0;
@@ -31,34 +27,47 @@
     }
 
     .youtube-bg iframe {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border: none;
       filter: brightness(0.5) blur(5px);
     }
 
     .container {
       position: relative;
+      z-index: 1;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 40px 20px;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      z-index: 1;
+      padding: 20px;
     }
 
-    .top-text {
-      display: flex;
-      justify-content: space-between;
-      max-width: 700px;
-      margin: 0 auto;
+    .main-image {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+    }
+
+    .bottom-text {
       font-size: 1.2rem;
     }
 
-    .main-content {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items:
+    .bottom-text a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid white;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="youtube-bg">
+    <iframe 
+      src="https://www.youtube.com/embed/ElSl03WsLrU?autoplay=1&mute=1&controls=0&loop=1&playlist=ElSl03WsLrU&modestbranding=1" 
+      allow="autoplay; encrypted-media" 
