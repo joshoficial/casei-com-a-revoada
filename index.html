@@ -106,9 +106,16 @@
     }
 
     .spotify-icon {
-      font-size: 2rem;
-      margin: 10px 0;
-    }
+  margin: 10px 0;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.spotify-icon:hover {
+  transform: scale(1.2);
+}
+
 
     /* 🧷 Botão e texto com animação */
     .bottom-text {
@@ -182,7 +189,17 @@
 
     <div class="main-content">
       <img src="images/CAPA-DA-MÚSICA.png" alt="Capa da música" class="main-image" />
-      <div class="spotify-icon">🎵</div>
+     <a 
+  href="https://open.spotify.com/intl-pt/track/1V0aO4oYY7R39h4gHrqGxD?si=239af5fbc4de4c08" 
+  class="spotify-icon" 
+  target="_blank" 
+  aria-label="Ouça no Spotify"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" viewBox="0 0 24 24">
+    <path d="M3 22v-20l18 10-18 10z"/>
+  </svg>
+</a>
+
       <div class="bottom-text">
         <a href="https://open.spotify.com/intl-pt/track/1V0aO4oYY7R39h4gHrqGxD?si=239af5fbc4de4c08" target="_blank">clique aqui</a>
         <span>e</span><span>ouça</span><span>agora</span>
