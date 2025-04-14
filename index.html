@@ -14,7 +14,7 @@
     html, body {
       height: 100%;
       overflow-x: hidden;
-      overflow-y: auto; /* permite rolar */
+      overflow-y: auto;
       font-family: Arial, sans-serif;
       color: white;
       background-color: black;
@@ -39,24 +39,22 @@
       transform: scale(1.2);
     }
 
-    /* 🌑 Vinheta escura */
+    /* 🌑 Vinheta escura por cima de tudo */
     .vignette-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, 0.2) 100%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  z-index: 4;
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0.4) 10%,
+        rgba(0, 0, 0, 1) 90%
+      );
+      z-index: 4;
+    }
 
-
-    /* 🔤 Conteúdo principal */
     .container {
       position: relative;
       min-height: 100vh;
@@ -153,7 +151,7 @@
       bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 4;
+      z-index: 5;
       display: flex;
       gap: 30px;
     }
@@ -173,27 +171,25 @@
       display: block;
     }
 
-    /* 🎧 Embed do Spotify revelado ao rolar */
+    /* 🎧 Embed do Spotify abaixo do conteúdo, mas sob a vinheta */
     .spotify-embed-section {
-  position: relative;
-  z-index: 2; /* visível sobre o fundo */
-  background-color: transparent;
-  padding: 150px 20px 200px; /* 👈 aumentei aqui o espaço abaixo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      position: relative;
+      z-index: 2;
+      background-color: transparent;
+      padding: 150px 20px 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.spotify-embed-section iframe {
-  max-width: 800px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-  border: none;
-}
+    .spotify-embed-section iframe {
+      max-width: 800px;
+      width: 100%;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    }
 
-
-    /* 📱 Responsivo */
     @media (max-width: 600px) {
       .top-text {
         gap: 3vw;
@@ -212,7 +208,7 @@
 </head>
 <body>
 
-  <!-- 🎥 Vídeo de fundo -->
+  <!-- 🎥 Fundo com vídeo -->
   <div class="video-bg">
     <video autoplay muted loop playsinline>
       <source src="videos/video-bg480.mp4" type="video/mp4" />
@@ -233,7 +229,6 @@
       <img src="images/CAPA-DA-MÚSICA.png" alt="Capa da música" class="main-image" />
 
       <a href="https://open.spotify.com/intl-pt/track/1V0aO4oYY7R39h4gHrqGxD?si=239af5fbc4de4c08" class="spotify-icon" target="_blank" aria-label="Ouça no Spotify">
-        <!-- Ícone do Spotify -->
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 168 168" fill="white">
           <path d="M84,0C37.7,0,0,37.7,0,84s37.7,84,84,84s84-37.7,84-84S130.3,0,84,0z M122.1,120.9
             c-1.4,2.3-4.5,3-6.8,1.5c-18.7-11.5-42.3-14.1-70.2-7.7c-2.6,0.6-5.3-1-5.9-3.6c-0.6-2.6,1-5.3,3.6-5.9
@@ -277,7 +272,6 @@
       loading="lazy">
     </iframe>
   </section>
-</div>
 
 </body>
 </html>
