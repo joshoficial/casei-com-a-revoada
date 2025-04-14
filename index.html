@@ -5,16 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casei com a Revoada</title>
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       height: 100%;
       overflow: hidden;
       font-family: Arial, sans-serif;
-      background: red; /* Teste pra ver se o fundo aparece */
       color: white;
     }
 
+    /* 🎥 YouTube como fundo */
     .youtube-bg {
       position: fixed;
       top: 0;
@@ -27,29 +31,52 @@
     }
 
     .youtube-bg iframe {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(0.4) blur(4px);
       border: none;
-      filter: brightness(0.5) blur(5px);
     }
 
     .container {
       position: relative;
-      z-index: 1;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px;
+      z-index: 1;
+    }
+
+    .top-text {
+      display: flex;
+      gap: 10px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
     }
 
     .main-image {
       width: 300px;
+      max-width: 90vw;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       margin-bottom: 20px;
+    }
+
+    .spotify-icon {
+      font-size: 2rem;
+      margin: 10px 0;
     }
 
     .bottom-text {
@@ -63,11 +90,39 @@
       border-bottom: 2px solid white;
       margin: 0 5px;
     }
+
+    .bottom-text span {
+      margin: 0 5px;
+    }
   </style>
 </head>
 <body>
 
+  <!-- 🎥 Fundo do YouTube -->
   <div class="youtube-bg">
     <iframe 
-      src="https://www.youtube.com/embed/ElSl03WsLrU?autoplay=1&mute=1&controls=0&loop=1&playlist=ElSl03WsLrU&modestbranding=1" 
+      src="https://www.youtube.com/embed/ElSl03WsLrU?autoplay=1&mute=1&controls=0&loop=1&playlist=ElSl03WsLrU&modestbranding=1&showinfo=0" 
       allow="autoplay; encrypted-media" 
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div class="container">
+    <div class="top-text">
+      <span>casei</span>
+      <span>com</span>
+      <span>a</span>
+      <span>revoada</span>
+    </div>
+
+    <div class="main-content">
+      <img src="images/CAPA-DA-MÚSICA.png" alt="Capa da música" class="main-image" />
+      <div class="spotify-icon">🎵</div>
+      <div class="bottom-text">
+        <a href="#">clique</a><span>aqui</span><span>e</span><span>ouça</span><span>agora</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
