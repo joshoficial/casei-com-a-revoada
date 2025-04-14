@@ -175,22 +175,23 @@
 
     /* 🎧 Embed do Spotify revelado ao rolar */
     .spotify-embed-section {
-      background-color: transparent;
-      padding: 150px 20px 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
+  position: relative;
+  z-index: 2; /* visível sobre o fundo */
+  background-color: transparent;
+  padding: 150px 20px 200px; /* 👈 aumentei aqui o espaço abaixo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .spotify-embed-section iframe {
-      max-width: 800px;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-      border: none;
-    }
+.spotify-embed-section iframe {
+  max-width: 800px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+  border: none;
+}
+
 
     /* 📱 Responsivo */
     @media (max-width: 600px) {
