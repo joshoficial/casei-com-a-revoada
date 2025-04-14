@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>casei com a revoada</title>
+  <title>Casei com a Revoada</title>
   <style>
     * {
       margin: 0;
@@ -18,7 +18,109 @@
       color: white;
     }
 
-    /* 🎥 Fundo com vídeo */
+    /* 🎥 Vídeo de fundo local */
     .video-bg {
       position: fixed;
       top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4) blur(4px);
+      transform: scale(1.2); /* 👈 zoom suave pra cortar bordas */
+    }
+
+    .container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .top-text {
+      display: flex;
+      gap: 10px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .main-image {
+      width: 300px;
+      max-width: 90vw;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    .spotify-icon {
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+
+    .bottom-text {
+      font-size: 1.2rem;
+    }
+
+    .bottom-text a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid white;
+      margin: 0 5px;
+    }
+
+    .bottom-text span {
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎥 Vídeo de fundo local -->
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="video/VIDEO BG 480.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo em HTML5.
+    </video>
+  </div>
+
+  <div class="container">
+    <div class="top-text">
+      <span>casei</span>
+      <span>com</span>
+      <span>a</span>
+      <span>revoada</span>
+    </div>
+
+    <div class="main-content">
+      <img src="images/CAPA-DA-MÚSICA.png" alt="Capa da música" class="main-image" />
+      <div class="spotify-icon">🎵</div>
+      <div class="bottom-text">
+        <a href="#">clique</a><span>aqui</span><span>e</span><span>ouça</span><span>agora</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
