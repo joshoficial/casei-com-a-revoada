@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Casei com a Revoada</title>
+  <title>casei com a revoada</title>
   <style>
     * {
       margin: 0;
@@ -18,14 +18,14 @@
       color: white;
     }
 
-    /* 🎥 Vídeo de fundo local */
+    /* 🎥 Vídeo de fundo */
     .video-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: -1;
+      z-index: -2;
       overflow: hidden;
     }
 
@@ -34,35 +34,71 @@
       height: 100%;
       object-fit: cover;
       filter: brightness(0.4) blur(4px);
-      transform: scale(1.2); /* 👈 zoom suave pra cortar bordas */
+      transform: scale(1.2);
     }
 
+    /* 🌘 Vinheta */
+    .vignette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 100%);
+      z-index: -1;
+    }
+
+    /* 🧠 Título posicionado com CSS absoluto */
+    .CABECALHO_copiar,
+    .com,
+    .a,
+    .revoada {
+      font-size: 41px;
+      font-family: Arial, sans-serif;
+      color: rgb(205, 209, 216);
+      line-height: 1.2;
+      text-align: left;
+      text-transform: lowercase;
+      transform: matrix(0.8667, 0, 0, 0.8667, 0, 0);
+      position: absolute;
+    }
+
+    .CABECALHO_copiar {
+      left: 256.698px;
+      top: 56.4px;
+      z-index: 18;
+    }
+
+    .com {
+      left: 695.349px;
+      top: 59.9px;
+      z-index: 19;
+    }
+
+    .a {
+      left: 1111.5px;
+      top: 59.9px;
+      z-index: 20;
+    }
+
+    .revoada {
+      left: 1519.319px;
+      top: 56.4px;
+      z-index: 21;
+    }
+
+    /* Conteúdo principal */
     .container {
       position: relative;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 40px 20px;
       text-align: center;
       z-index: 1;
-    }
-
-    .top-text {
-      display: flex;
-      gap: 10px;
-      font-size: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
     }
 
     .main-image {
@@ -97,28 +133,27 @@
 </head>
 <body>
 
-  <!-- 🎥 Vídeo de fundo local -->
+  <!-- 🎥 Vídeo de fundo com vinheta -->
   <div class="video-bg">
     <video autoplay muted loop playsinline>
-      <source src="videos/VIDEO BG 480.mp4" type="video/mp4" />
+      <source src="videos/video-bg-480.mp4" type="video/mp4" />
       Seu navegador não suporta vídeo em HTML5.
     </video>
+    <div class="vignette"></div>
   </div>
 
-  <div class="container">
-    <div class="top-text">
-      <span>casei</span>
-      <span>com</span>
-      <span>a</span>
-      <span>revoada</span>
-    </div>
+  <!-- 🧠 Título posicionado -->
+  <span class="CABECALHO_copiar">casei</span>
+  <span class="com">com</span>
+  <span class="a">a</span>
+  <span class="revoada">revoada</span>
 
-    <div class="main-content">
-      <img src="images/CAPA-DA-MÚSICA.png" alt="Capa da música" class="main-image" />
-      <div class="spotify-icon">🎵</div>
-      <div class="bottom-text">
-        <a href="#">clique</a><span>aqui</span><span>e</span><span>ouça</span><span>agora</span>
-      </div>
+  <!-- 🎵 Conteúdo principal -->
+  <div class="container">
+    <img src="images/CAPA-DA-MÚSICA.png" alt="Capa da música" class="main-image" />
+    <div class="spotify-icon">🎵</div>
+    <div class="bottom-text">
+      <a href="#">clique</a><span>aqui</span><span>e</span><span>ouça</span><span>agora</span>
     </div>
   </div>
 
