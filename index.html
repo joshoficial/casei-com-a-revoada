@@ -155,20 +155,27 @@
 }
 
 .social-icons {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
-    justify-content: center;
-  }
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  justify-content: center;
+}
 
-  .social-icons a {
-    transition: transform 0.3s ease;
-    display: inline-block;
-  }
+.social-icons a {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
 
-  .social-icons a:hover {
-    transform: scale(1.2);
-  }
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.social-icon-img {
+  width: 32px; /* ajuste conforme o tamanho desejado */
+  height: auto;
+  display: block;
+}
+
 
     /* 📱 Responsivo */
     @media (max-width: 600px) {
@@ -237,24 +244,17 @@
   </div>
 
   <div class="social-icons">
-    <a href="https://www.instagram.com/sojosh_/" target="_blank" aria-label="Instagram">
-      <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07..." />
-        <path d="M12 5.838a6.162 6.162 0 100 12.324..." />
-      </svg>
-    </a>
-    <a href="https://www.tiktok.com/@sojosh_" target="_blank" aria-label="TikTok">
-      <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
-        <path d="M12.37 2c.36 0 .73.03 1.1.1a5.67..." />
-      </svg>
-    </a>
-    <a href="https://www.youtube.com/@sojosh_" target="_blank" aria-label="YouTube">
-      <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
-        <path d="M19.615 3.184c-1.596-.6-7.615..." />
-      </svg>
-    </a>
-  </div>
+  <a href="https://www.instagram.com/sojosh_/" target="_blank" aria-label="Instagram">
+    <img src="images/BOTÃO-INSTAGRAM.png" alt="Instagram" class="social-icon-img" />
+  </a>
+  <a href="https://www.tiktok.com/@sojosh_" target="_blank" aria-label="TikTok">
+    <img src="images/BOTÃO-TIKTOK.png" alt="TikTok" class="social-icon-img" />
+  </a>
+  <a href="https://www.youtube.com/@sojosh_" target="_blank" aria-label="YouTube">
+    <img src="images/BOTÃO-YOUTUBE.png" alt="YouTube" class="social-icon-img" />
+  </a>
 </div>
+
 
 </body>
 </html>
