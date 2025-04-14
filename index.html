@@ -16,9 +16,10 @@
       overflow: hidden;
       font-family: Arial, sans-serif;
       color: white;
+      background-color: black;
     }
 
-    /* 🎥 Fundo de vídeo local */
+    /* 🎥 Vídeo de fundo local */
     .video-bg {
       position: fixed;
       top: 0;
@@ -34,10 +35,10 @@
       height: 100%;
       object-fit: cover;
       filter: brightness(0.4) blur(4px);
-      transform: scale(1.2); /* Zoom leve */
+      transform: scale(1.2);
     }
 
-    /* 🌑 Vinheta (sombreamento nas bordas) */
+    /* 🌑 Vinheta escura nas bordas */
     .vignette-overlay {
       position: absolute;
       top: 0;
@@ -45,11 +46,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      background: radial-gradient(
-        circle at center,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 0.5) 100%
-      );
+      background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.5) 100%);
       z-index: -1;
     }
 
@@ -65,15 +62,21 @@
       z-index: 1;
     }
 
-    /* Título centralizado com muito espaço */
+    /* 🅰️ Título espaçado e responsivo */
     .top-text {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 25vw;
       font-size: 1.5rem;
       text-transform: lowercase;
       letter-spacing: 1px;
       margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .top-text span:hover {
+      transform: scale(1.1);
     }
 
     .main-content {
@@ -84,12 +87,18 @@
       flex-grow: 1;
     }
 
+    /* 📸 Imagem com animação */
     .main-image {
       width: 300px;
       max-width: 90vw;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .main-image:hover {
+      transform: scale(1.05);
     }
 
     .spotify-icon {
@@ -97,20 +106,43 @@
       margin: 10px 0;
     }
 
+    /* 🧷 Botão estilizado com parte em destaque */
     .bottom-text {
       font-size: 1.2rem;
+      margin-top: 10px;
     }
 
     .bottom-text a {
-      color: white;
       font-weight: bold;
-      text-decoration: none;
-      border-bottom: 2px solid white;
-      margin: 0 5px;
+      text-decoration: underline;
+      color: white;
+      margin-right: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .bottom-text a:hover {
+      transform: scale(1.05);
     }
 
     .bottom-text span {
-      margin: 0 5px;
+      margin: 0 3px;
+    }
+
+    /* 📱 Responsivo */
+    @media (max-width: 600px) {
+      .top-text {
+        gap: 6vw;
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+      }
+
+      .main-image {
+        width: 90%;
+      }
+
+      .bottom-text {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -119,13 +151,13 @@
   <!-- 🎥 Vídeo de fundo -->
   <div class="video-bg">
     <video autoplay muted loop playsinline>
-      <source src="videos/VIDEO BG 480.mp4" type="video/mp4" />
+      <source src="video/VIDEO BG 480.mp4" type="video/mp4" />
       Seu navegador não suporta vídeo em HTML5.
     </video>
     <div class="vignette-overlay"></div>
   </div>
 
-  <!-- 🔤 Texto + conteúdo principal -->
+  <!-- 🔤 Conteúdo -->
   <div class="container">
     <div class="top-text">
       <span>casei</span>
@@ -138,7 +170,8 @@
       <img src="images/CAPA-DA-MÚSICA.png" alt="Capa da música" class="main-image" />
       <div class="spotify-icon">🎵</div>
       <div class="bottom-text">
-        <a href="#">clique</a><span>aqui</span><span>e</span><span>ouça</span><span>agora</span>
+        <a href="https://open.spotify.com/intl-pt/track/1V0aO4oYY7R39h4gHrqGxD?si=239af5fbc4de4c08" target="_blank">clique aqui</a>
+        <span>e</span><span>ouça</span><span>agora</span>
       </div>
     </div>
   </div>
