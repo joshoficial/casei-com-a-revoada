@@ -207,25 +207,17 @@
         font-size: 1rem;
       }
     }
-    @keyframes grainMove {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-1px, 1px); }
-}
-
-.grain-overlay {
+    .grain-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 9999; /* ou 5+, mas abaixo de social-icons se quiser */
   pointer-events: none;
-  z-index: 9999;
-  background-image: url('images/grain.png'); /* pode usar um noise mais sutil */
-  background-repeat: repeat;
-  opacity: 0.55;
-  animation: grainMove 1s infinite;
+  background: url('images/grain.png') repeat;
+  opacity: 0.5; /* 👈 você controla a intensidade aqui */
   mix-blend-mode: overlay;
-}
   </style>
 </head>
 <body>
