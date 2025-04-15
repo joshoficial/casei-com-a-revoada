@@ -207,6 +207,25 @@
         font-size: 1rem;
       }
     }
+    @keyframes grainMove {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-1px, 1px); }
+}
+
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url('images/grain.png'); /* pode usar um noise mais sutil */
+  background-repeat: repeat;
+  opacity: 0.05;
+  animation: grainMove 1s infinite;
+  mix-blend-mode: overlay;
+}
   </style>
 </head>
 <body>
